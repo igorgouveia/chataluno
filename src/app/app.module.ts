@@ -13,7 +13,6 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { LoginPage } from '../pages/login/login.page';
 import { SignupPage } from '../pages/signup/signup.page';
-import { UserProfilesModules } from '../pages/user-profiles/user-profiles.module';
 import { AuthService } from '../services/auth.service';
 import { DataService } from '../services/data.service';
 import { MyApp } from './app.component';
@@ -21,6 +20,12 @@ import { ChatModule } from '../pages/chat/chat.module';
 import { ResetPasswordPage } from '../pages/reset-password/reset-password.page';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { Base64 } from '@ionic-native/base64';
+import { PerguntasPage } from '../pages/perguntas/perguntas';
+import { FazerPerguntaPage } from '../pages/fazer-pergunta/fazer-pergunta';
+import { VerPerguntaPage } from '../pages/ver-pergunta/ver-pergunta';
+import { HomePage } from '../pages/home/home';
+import { PerfilPage } from '../pages/perfil/perfil';
+import { Signup1Page } from '../pages/signup1/signup1';
 
 @NgModule({
 	declarations: [
@@ -28,6 +33,12 @@ import { Base64 } from '@ionic-native/base64';
 		LoginPage,
 		SignupPage,
 		ResetPasswordPage,	
+		PerguntasPage,
+		FazerPerguntaPage,
+		VerPerguntaPage,
+		HomePage,
+		PerfilPage, 
+		Signup1Page
 		],
 	imports: [
 		BrowserModule,
@@ -36,8 +47,7 @@ import { Base64 } from '@ionic-native/base64';
 		AngularFireModule.initializeApp(config.fire),
 		NgxErrorsModule,
 		CustomComponentsModule,
-		UserProfilesModules,
-		ChatModule,
+		ChatModule, 
 	],
 	bootstrap: [IonicApp],
 	entryComponents: [
@@ -45,6 +55,12 @@ import { Base64 } from '@ionic-native/base64';
 		LoginPage,
 		SignupPage,
 		ResetPasswordPage,
+		FazerPerguntaPage,
+		VerPerguntaPage,
+		HomePage,
+		PerfilPage,		
+		Signup1Page,
+		PerguntasPage
 		
 	],
 	providers: [

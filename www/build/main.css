@@ -27614,14 +27614,3 @@ as-page-chat-messages ion-footer ion-input {
   padding-left: 10px;
   border-radius: 5px;
 }
-
-as-page-user-profile .avatar-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}

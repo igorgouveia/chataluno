@@ -12,17 +12,18 @@ import { AuthService } from '../../services/auth.service';
 export class ChatMessagesPage {
 	item: any;
 	messages$: FirebaseListObservable<any[]>;
-	public usuario: any =  this.auth.getName();
+	items$: FirebaseListObservable<any[]>;
+	public usuario: any =  this.auth.getUsername();
 
 	constructor(navParams: NavParams, data: DataService, public auth: AuthService) {
-
+		this.items$ = data.getPerfil();
 		this.messages$ = data.getChatMessages();
 	}
 
 	send(message: string) {
 		this.messages$.push({
 			createdAt: new Date().toLocaleString(),
-			from: this.auth.getName(),
+			from: this.auth.getUsername(),
 			text: message
 		});
 	}

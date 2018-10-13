@@ -1,0 +1,20 @@
+<ion-content class="view-class">
+  <ion-content padding="true" class="has-header">
+    <ng-container *ngFor="let item of items$ | async : true">
+    <div *ngIf="(item.uid===uid)" class="list card" id="perfil-card27">
+      <ion-item class="item-avatar" id="perfil-list-item17">
+        <h2>Nome</h2>
+        <p>{{item.nome}}</p>
+      </ion-item>
+      <ion-item class="item-avatar" id="perfil-list-item17">
+          <h2>Numero de matrícula</h2>
+          <p>{{item.matricula}}</p>
+        </ion-item>
+        <ion-item class="item-avatar" id="perfil-list-item17">
+            <h2>Curso</h2>
+            <p>{{item.curso}}</p>
+          </ion-item>
+    </div>
+  </ng-container>
+  </ion-content>
+</ion-content>

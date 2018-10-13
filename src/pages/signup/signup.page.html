@@ -13,18 +13,9 @@
 
 	<form (ngSubmit)="signup()" [formGroup]="form">
 		<ion-list inset>
-			<ion-item>
-				<ion-input type="text" placeholder="Nome" formControlName="nome"></ion-input>
-			</ion-item>
-			<div class="spacer" style="width:300px;height:5px;"></div>
-			
-			<ion-item>
-				<ion-input type="text" placeholder="Matricula" formControlName="matricula"></ion-input>
-			</ion-item>
-			<div class="spacer" style="width:300px;height:5px;"></div>
-			
+					
 			<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched']) }">
-				<ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+				<ion-input type="text"  [(ngModel)]="email" name="email" placeholder="Email" formControlName="email"></ion-input>
 			</ion-item>
 
 			<div ngxErrors="email" #emailErrors="ngxErrors">
@@ -32,7 +23,7 @@
 			</div>
 
 			<ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
-				<ion-input type="password" placeholder="Senha" formControlName="password"></ion-input>
+				<ion-input type="password"  [(ngModel)]="senha" name="senha" placeholder="Senha" formControlName="password"></ion-input>
 			</ion-item>
 
 			<div ngxErrors="password" #passwordErrors="ngxErrors">
@@ -42,7 +33,7 @@
 
 		<div padding-horizontal>
 			<div class="form-error">{{signupError}}</div>
-			<button ion-button id="login-cadastrar" color="primary" block type="submit" [disabled]="!form.valid">Cadastrar</button>
+			<button ion-button id="login-cadastrar" color="primary" block type="submit" [disabled]="!form.valid">Continuar</button>
 		</div>
 	</form>
 </ion-content>

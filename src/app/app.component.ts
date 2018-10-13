@@ -1,3 +1,4 @@
+import { NgModule } from '@angular/core';
 import { Component, ViewChild } from '@angular/core';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -6,6 +7,9 @@ import { ChatRoomsPage } from '../pages/chat/chat-rooms.page';
 import { LoginPage } from '../pages/login/login.page';
 import { AuthService } from '../services/auth.service';
 import { ChatMessagesPage } from '../pages/chat/chat-messages.page';
+import { PerguntasPage } from '../pages/perguntas/perguntas';
+import { PerfilPage } from '../pages/perfil/perfil';
+import { HomePage } from '../pages/home/home';
 
 @Component({
 	templateUrl: './app.html'
@@ -28,9 +32,10 @@ export class MyApp {
 
 		// set our app's pages
 		this.pages = [
-			{ title: 'Perfil', component: ChatRoomsPage, icon: 'contact' },
+			{ title: 'Perfil', component: PerfilPage, icon: 'contact' },
 			{ title: 'Chat', component: ChatMessagesPage, icon: 'chatboxes' },
-			{ title: 'Arquivos', component: ChatRoomsPage, icon: 'search' },
+			{ title: 'Perguntas', component: PerguntasPage, icon: 'chatboxes' },
+			
 			
 
 		
@@ -42,19 +47,7 @@ export class MyApp {
 			this.statusBar.styleDefault();
 		});
 
-		this.auth.afAuth.authState
-			.subscribe(
-				user => {
-					if (user) {
-						this.rootPage = ChatRoomsPage;
-					} else {
-						this.rootPage = LoginPage;			
-					}
-				},
-				() => {
-					this.rootPage = LoginPage;
-				}
-			);
+		
 	}
 
 	openPage(page) {

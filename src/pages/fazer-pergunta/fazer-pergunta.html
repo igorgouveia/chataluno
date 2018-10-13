@@ -1,0 +1,18 @@
+<ion-content class="view-class">
+  <ion-content padding="true" class="has-header">
+    <ion-list>
+
+      <ion-item>
+        <ion-label stacked>Assunto</ion-label>
+        <ion-input  [(ngModel)]="json.assunto" name="assunto" type="text"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label stacked>Pergunta</ion-label>
+        <ion-input [(ngModel)]="json.pergunta" name="pergunta" type="text"></ion-input>
+      </ion-item>
+    
+    </ion-list>
+    <button ion-button (click)="cadastrar()" >Enviar pergunta</button>
+  </ion-content>
+</ion-content>

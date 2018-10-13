@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="add()">
+        <ion-icon name="create" ></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="view-class">
+    <ng-container *ngFor="let item of items$ | async : true">
+      <ion-card>
+        <ion-item>
+          <h2>{{item.username}}</h2>
+          <p>{{item.data}}</p>
+        </ion-item>
+        <ion-card-content>
+          <p>{{item.pergunta}}</p>
+        </ion-card-content>      
+      </ion-card>
+      
+    </ng-container>
+  </ion-content>
