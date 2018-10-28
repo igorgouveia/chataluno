@@ -3,7 +3,6 @@ import { Component, ViewChild } from '@angular/core';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { App, MenuController, Nav, Platform } from 'ionic-angular';
-import { ChatRoomsPage } from '../pages/chat/chat-rooms.page';
 import { LoginPage } from '../pages/login/login.page';
 import { AuthService } from '../services/auth.service';
 import { ChatMessagesPage } from '../pages/chat/chat-messages.page';
@@ -34,7 +33,7 @@ export class MyApp {
 		this.pages = [
 			{ title: 'Perfil', component: PerfilPage, icon: 'contact' },
 			{ title: 'Chat', component: ChatMessagesPage, icon: 'chatboxes' },
-			{ title: 'Perguntas', component: PerguntasPage, icon: 'chatboxes' },
+			{ title: 'Perguntas', component: PerguntasPage, icon: 'help' },
 			
 			
 

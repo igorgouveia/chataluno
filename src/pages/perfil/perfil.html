@@ -1,4 +1,15 @@
-<ion-content class="view-class">
+
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
   <ion-content padding="true" class="has-header">
     <ng-container *ngFor="let item of items$ | async : true">
     <div *ngIf="(item.uid===uid)" class="list card" id="perfil-card27">

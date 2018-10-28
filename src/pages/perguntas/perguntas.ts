@@ -12,6 +12,7 @@ import { FirebaseApp } from 'angularfire2';
 })
 export class PerguntasPage {
   items$: FirebaseListObservable<any[]>;
+  items1$: FirebaseListObservable<any[]>;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -21,6 +22,7 @@ export class PerguntasPage {
 		public auth: AuthService,
 		private fb: FirebaseApp) {
     this.items$ = data.getPerguntas();
+    this.items1$ = data.getAlunos();
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad PerguntasPage');

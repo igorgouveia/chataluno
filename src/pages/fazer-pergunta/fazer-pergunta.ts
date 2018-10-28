@@ -4,14 +4,7 @@ import { Pergunta } from '../../../models/json.model';
 import { PerguntasPage } from '../perguntas/perguntas';
 import { AuthService } from '../../services/auth.service';
 import { DataService } from '../../services/data.service';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-
-/**
- * Generated class for the FazerPerguntaPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'page-fazer-pergunta',
@@ -20,6 +13,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class FazerPerguntaPage {
   data = new Date().toLocaleDateString();
 	lista: FirebaseListObservable<any>;
+	value: FirebaseObjectObservable<any>;
   constructor(
     private alertCtrl: AlertController,
 		public af: AngularFireDatabase,
@@ -28,7 +22,8 @@ export class FazerPerguntaPage {
 		navParams: NavParams,
 		public auth: AuthService,
 	) {
-    this.lista = this.af.list('/perguntas');
+		this.lista = this.af.list('/perguntas');		   
+    this.value = this.af.object('/perguntas/');
   }
 
   ionViewDidLoad() {
@@ -59,6 +54,9 @@ export class FazerPerguntaPage {
   this.lista.push(this.json).then(() => {
 				  this.presentAlert();
 	});
-  
 }
+
+	updateValue(data: any) {
+	this.value.update(data).then(_ => console.log('update!'));
+	}	
 }

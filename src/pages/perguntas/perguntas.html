@@ -1,23 +1,36 @@
 <ion-header>
-  <ion-toolbar>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Perguntas</ion-title>
     <ion-buttons start>
-      <button ion-button icon-only (click)="add()">
-        <ion-icon name="create" ></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
+    <button ion-button icon-only (click)="add()">
+      <ion-icon name="create" ></ion-icon>
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+
 </ion-header>
-<ion-content class="view-class">
-    <ng-container *ngFor="let item of items$ | async : true">
-      <ion-card>
-        <ion-item>
-          <h2>{{item.username}}</h2>
-          <p>{{item.data}}</p>
-        </ion-item>
-        <ion-card-content>
-          <p>{{item.pergunta}}</p>
-        </ion-card-content>      
-      </ion-card>
-      
-    </ng-container>
-  </ion-content>
+
+
+<ion-content padding>
+
+  <ng-container *ngFor="let item of items$ | async : true">
+    <ion-card>
+      <ion-item>
+        <ng-container *ngFor="let item1 of items1$ | async : true">
+        <h2 *ngIf="item1.uid === item.uid">{{item1.nome}}</h2>
+        </ng-container>
+        <p>{{item.data}}</p>
+      </ion-item>
+      <ion-card-content>
+        <p>{{item.pergunta}}</p>
+      </ion-card-content>      
+    </ion-card>
+    
+  </ng-container>
+
+</ion-content>
+

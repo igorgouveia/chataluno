@@ -5,7 +5,6 @@ import { NavController } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
 import { SignupPage } from '../signup/signup.page';
 import { ResetPasswordPage } from '../reset-password/reset-password.page';
-import { ChatRoomsPage } from '../chat/chat-rooms.page';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { HomePage } from '../home/home';
 
