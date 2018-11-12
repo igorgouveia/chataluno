@@ -13,7 +13,7 @@
 
 	<form (ngSubmit)="signup()" [formGroup]="form">
 		<ion-list inset>
-					
+			<h4 style="color:#fff">Email:</h4>		
 			<ion-item [ngClass]="{ invalid: emailErrors.hasError('*', ['touched']) }">
 				<ion-input type="text"  [(ngModel)]="email" name="email" placeholder="Email" formControlName="email"></ion-input>
 			</ion-item>
@@ -21,7 +21,7 @@
 			<div ngxErrors="email" #emailErrors="ngxErrors">
 				<div [ngxError]="['email', 'required']" [when]="['touched']">Digite um email válido</div>
 			</div>
-
+			<h4 style="color:#fff">Senha:</h4>
 			<ion-item [ngClass]="{ invalid: passwordErrors.hasError('*', ['touched']) }">
 				<ion-input type="password"  [(ngModel)]="senha" name="senha" placeholder="Senha" formControlName="password"></ion-input>
 			</ion-item>

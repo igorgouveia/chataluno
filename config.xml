@@ -30,7 +30,7 @@
     <preference name="AndroidLaunchMode" value="singleTask" />
     <universal-links>
         <host name="n6r5e.app.goo.gl" scheme="https" />
-        <host name="ionic-toolkit-firebase.firebaseapp.com" scheme="https">
+        <host name="chat_aluno" scheme="https">
             <path url="/__/auth/callback" />
         </host>
     </universal-links>

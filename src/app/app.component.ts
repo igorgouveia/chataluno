@@ -51,7 +51,7 @@ export class MyApp {
 
 	openPage(page) {
 		this.menu.close();
-		this.nav.setRoot(page.component);
+		this.nav.setRoot(LoginPage);
 	}
 
 	logout() {
